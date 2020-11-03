@@ -17,4 +17,10 @@ public class SuperArray {
     return size;
   }
 
+  public boolean add(String element) {
+    data[size] = element;
+    size++;  //adding elements means increasing size
+    return true;
+  }
+
 }
