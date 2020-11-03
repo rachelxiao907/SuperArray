@@ -27,4 +27,10 @@ public class SuperArray {
     return data[index];
   }
 
+  public String set(int index, String element) {
+    String old = data[index];
+    data[index] = element;
+    return old;
+  }
+
 }
