@@ -107,4 +107,12 @@ public class SuperArray {
     return index;
   }
 
+  public String[] toArray() {
+    String[] arr = new String[data.length];
+    for (int i = 0; i < data.length; i++) {
+      arr[i] = data[i];
+    }
+    return arr;
+  }
+
 }
