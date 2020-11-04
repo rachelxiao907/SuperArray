@@ -7,13 +7,12 @@ public class SuperArray {
     size = 0;
   }
 
+  public SuperArray(int initialCapacity) {
+    data = new String[initialCapacity];
+    size = 0;
+  }
+
   public int size() {
-    for (int i = 0; i < data.length; i++) {
-      if (data[i] == null) {
-        size = i;
-        i = data.length;
-      }
-    }
     return size;
   }
 
@@ -37,7 +36,7 @@ public class SuperArray {
   }
 
   private void resize() {
-    String[] arr = new String[data.length + 10];
+    String[] arr = new String[data.length * 2 + 1];
     for (int i = 0; i < data.length; i++) {
       arr[i] = data[i];
     }
@@ -45,14 +44,12 @@ public class SuperArray {
   }
 
   public boolean isEmpty() {
-    if (size == 0) {
-      return true;
-    }
-    return false;
+    return size == 0;
   }
 
   public void clear() {
     String[] reset = new String[data.length];
+    size = 0;
     data = reset;
   }
 
@@ -72,7 +69,6 @@ public class SuperArray {
       }
     }
     return false;
-
   }
 
 }
