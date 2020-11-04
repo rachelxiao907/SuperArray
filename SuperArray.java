@@ -95,5 +95,16 @@ public class SuperArray {
     size--;
     return removed;
   }
-  
+
+  public int indexOf(String s) {
+    int index = -1;
+    for (int i = 0; i < data.length; i++) {
+      if (data[i] == s) {
+        index = i;
+        i = data.length;
+      }
+    }
+    return index;
+  }
+
 }
