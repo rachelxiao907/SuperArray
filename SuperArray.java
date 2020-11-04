@@ -44,4 +44,16 @@ public class SuperArray {
     data = arr;
   }
 
+  public boolean isEmpty() {
+    if (size == 0) {
+      return true;
+    }
+    return false;
+  }
+
+  public void clear() {
+    String[] reset = new String[data.length];
+    data = reset;
+  }
+
 }
