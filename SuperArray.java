@@ -56,4 +56,15 @@ public class SuperArray {
     data = reset;
   }
 
+  public String toString() {
+    if (size == 0) return "[]";
+    String display = "[";
+    for (int i = 0; i < size - 1; i++) {
+      if (data[i] != null) {
+        display = display + data[i] + Integer.toString(i) + ", ";
+      }
+    }
+    return display + data[size-1] + Integer.toString(size-1) + "]";
+  }
+
 }
