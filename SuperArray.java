@@ -60,8 +60,8 @@ public class SuperArray {
   }
 
   public boolean contains(String s) {
-    for (int i = 0; i < data.length; i++) {
-      if (data[i] == s) {
+    for (int i = 0; i < size; i++) {
+      if (data[i].equals(s)) {
         return true;
       }
     }
@@ -84,32 +84,30 @@ public class SuperArray {
 
   public String remove(int index) {
     String removed = data[index];
-    String[] arr = new String[data.length];
-    for (int i = 0; i < index; i++) {
-      arr[i] = data[i];
+    // String[] arr = new String[data.length];
+    // for (int i = 0; i < index; i++) {
+    //   arr[i] = data[i];
+    // }
+    for (int i = index; i < size - 1; i++) {
+      data[i] = data[i+1];
     }
-    for (int i = index; i < data.length - 1; i++) {
-      arr[i] = data[i+1];
-    }
-    data = arr;
+    data[size-1] = null;
     size--;
     return removed;
   }
 
   public int indexOf(String s) {
-    int index = -1;
-    for (int i = 0; i < data.length; i++) {
-      if (data[i] == s) {
-        index = i;
-        i = data.length;
+    for (int i = 0; i < size; i++) {
+      if (data[i].equals(s)) {
+        return i;
       }
     }
-    return index;
+    return -1;
   }
 
   public String[] toArray() {
-    String[] arr = new String[data.length];
-    for (int i = 0; i < data.length; i++) {
+    String[] arr = new String[size];
+    for (int i = 0; i < size; i++) {
       arr[i] = data[i];
     }
     return arr;
