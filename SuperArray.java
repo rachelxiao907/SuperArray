@@ -84,10 +84,6 @@ public class SuperArray {
 
   public String remove(int index) {
     String removed = data[index];
-    // String[] arr = new String[data.length];
-    // for (int i = 0; i < index; i++) {
-    //   arr[i] = data[i];
-    // }
     for (int i = index; i < size - 1; i++) {
       data[i] = data[i+1];
     }
