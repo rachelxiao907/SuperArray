@@ -45,5 +45,26 @@ public class SuperArrayTester {
     System.out.println(t2.toString());
     System.out.println(t2.indexOf("bark"));
     System.out.println(t2.indexOf("elephant"));
+
+    SuperArray t3 = new SuperArray();
+    t3.add("white");
+    t3.add("black");
+    t3.add("green");
+    t3.add("white");
+    t3.add("black");
+    t3.add("green");
+    System.out.println(t3.indexOf("green"));
+    System.out.println(t3.lastIndexOf("black"));
+    System.out.println(t3.lastIndexOf("zack"));
+
+    SuperArray t4 = new SuperArray();
+    t4.add("white");
+    t4.add("black");
+    t4.add("green");
+    t4.add("white");
+    t4.add("black");
+    t4.add("green");
+    t4.add("rabbit");
+    System.out.println(t3.equals(t4));
   }
 }
