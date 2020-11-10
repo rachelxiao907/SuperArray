@@ -34,6 +34,9 @@ public class SuperArray {
   }
 
   public String set(int index, String element) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("Index " + index + " must be in range of the SuperArray");
+    }
     String replaced = data[index];
     data[index] = element;
     return replaced;
