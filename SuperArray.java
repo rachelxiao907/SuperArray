@@ -27,6 +27,9 @@ public class SuperArray {
   }
 
   public String get(int index) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("Index " + index + " must be in range of the SuperArray");
+    }
     return data[index];
   }
 
