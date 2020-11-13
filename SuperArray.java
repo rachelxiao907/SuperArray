@@ -28,14 +28,14 @@ public class SuperArray {
 
   public String get(int index) {
     if (index < 0 || index >= size()) {
-      throw new IndexOutOfBoundsException("Index " + index + " must be in range of the SuperArray");
+      throw new IndexOutOfBoundsException("Index " + index + " cannot be out of range of the SuperArray");
     }
     return data[index];
   }
 
   public String set(int index, String element) {
     if (index < 0 || index >= size()) {
-      throw new IndexOutOfBoundsException("Index " + index + " must be in range of the SuperArray");
+      throw new IndexOutOfBoundsException("Index " + index + " cannot be out of range of the SuperArray");
     }
     String replaced = data[index];
     data[index] = element;
@@ -78,6 +78,9 @@ public class SuperArray {
   }
 
   public void add(int index, String element) {
+    if (index < 0 || index > size()) {
+      throw new IndexOutOfBoundsException("Index " + index + " cannot exceed the size of the Super Array");
+    }
     if (size == data.length) resize();
     String[] arr = new String[data.length];
     for (int i = 0; i < index; i++) {
@@ -92,6 +95,9 @@ public class SuperArray {
   }
 
   public String remove(int index) {
+    if (index < 0 || index >= size()) {
+      throw new IndexOutOfBoundsException("Index " + index + " is not in the Super Array");
+    }
     String removed = data[index];
     for (int i = index; i < size - 1; i++) {
       data[i] = data[i+1];
