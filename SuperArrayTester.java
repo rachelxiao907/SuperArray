@@ -66,5 +66,7 @@ public class SuperArrayTester {
     t4.add("green");
     t4.add("rabbit");
     System.out.println(t3.equals(t4));
+
+    System.out.println(t4.get(8));
   }
 }
